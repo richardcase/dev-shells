@@ -1,7 +1,7 @@
 {
   description = "A Nix-flake-based Go 1.22 development environment";
 
-  inputs.nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.*.tar.gz";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs";
 
   outputs = { self, nixpkgs }:
     let
@@ -24,8 +24,14 @@
 
             # https://github.com/golangci/golangci-lint
             golangci-lint
+
+            # The Go language server (for IDEs and such)
+            gopls
           ];
         };
+        shellHook = ''
+              ${pkgs.go_1_18}/bin/go version
+        '';
       });
     };
 }
