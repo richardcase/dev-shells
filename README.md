@@ -2,7 +2,7 @@
 
 Based on this: <https://github.com/the-nix-way/dev-templates/tree/main>
 
-##  Use cirectly with direnv
+##  Use directly with direnv
 
 Create an **.envrc** file and add any required use statements. For example:
 
